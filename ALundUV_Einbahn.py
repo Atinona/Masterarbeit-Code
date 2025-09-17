@@ -232,7 +232,7 @@ for gl in np.arange(0.7, 1.01, 0.1):
     # Berechnung Ablaufleistung und Umschichtungsvolumen:
 
     berechnung = Parallel(n_jobs=-1)(
-        delayed(berechneAC)(
+        delayed(berechneALundUV)(
             k, n, T, dt, r1, S1, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, gamma,
             sigma_BS, delta, psi, N_storno, N_diffStorno
         ) for k in range(K)
@@ -249,3 +249,4 @@ end = time.time()
 print()
 
 print(f"Gesamtzeit: {end - start} Sekunden")
+
