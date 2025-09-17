@@ -41,7 +41,7 @@ def simuliereProzesse(K, alpha, m, sigma_r, pi, sigma_s, rho, T, dt, r0, S0):
 
     return r, S
 
-# Berechnung der Ablaufleistung und des AC für eine Simulation:
+# Berechnung des AC für eine Simulation:
 def berechneAC(AC_typ, k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, gamma, sigma_BS,
                  delta, psi, N_storno, N_diffTod, N_diffStorno):
     V = B  # Vertragsguthaben
@@ -326,4 +326,5 @@ for gl in np.arange(0.7, 1.01, 0.1):
 
 end = time.time()
 print()
+
 print(f"Gesamtzeit: {end - start} Sekunden")
