@@ -36,7 +36,7 @@ def simuliereProzesse(K, alpha, m, sigma_r, pi, sigma_s, rho, T, dt, r0, S0):
 
     return r, S
 
-# Berechnung des AC für eine Simulation:
+# Berechnung des Vertragsverlaufs ohne Zusatzoption:
 def berechneVertragOhne(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, gamma, sigma_BS,
                  delta, psi, N_storno, N_diffStorno):
     V = B  # Vertragsguthaben
@@ -171,6 +171,7 @@ def berechneVertragOhne(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, 
 
     return V_KS_array, V_GF_array, V_FF_array, BG_array
 
+# Berechnung des Vertragsverlaufs mit Einbahnstraßen-Option:
 def berechneVertragEinbahn(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, gamma, sigma_BS,
                  delta, psi, N_storno, N_diffStorno):
     V = B  # Vertragsguthaben
@@ -303,6 +304,7 @@ def berechneVertragEinbahn(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mo
 
     return V_KS_array, V_GF_array, V_FF_array, BG_array
 
+# Berechnung des Vertragsverlaufs mit Lock-In-Option:
 def berechneVertragLockIn(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, xli, gamma, sigma_BS,
                  delta, psi, N_storno, N_diffStorno):
     V = B  # Vertragsguthaben
@@ -556,4 +558,5 @@ axs[4].set_ylabel('Vertragsguthaben in Euro')
 axs[4].grid(True)
 axs[4].set_title("Lock-In-Option")
 plt.tight_layout()
+
 plt.savefig(f"Vertragsablauf_Seed{seed}.png")
