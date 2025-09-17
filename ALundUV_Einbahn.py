@@ -39,8 +39,8 @@ def simuliereProzesse(K, alpha, m, sigma_r, pi, sigma_s, rho, T, dt, r0, S0):
 
     return r, S
 
-# Berechnung der Ablaufleistung und des AC für eine Simulation:
-def berechneAC(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, gamma, sigma_BS,
+# Berechnung der Ablaufleistung und des Umschichtungsvolumens für eine Simulation:
+def berechneALundUV(k, n, T, dt, r, S, alpha, m, sigma_r, B, N0, EK, i_mon, gl, gf, gamma, sigma_BS,
                  delta, psi, N_storno, N_diffStorno):
     V = B  # Vertragsguthaben
     V_KS = 0  # Kapital im konventionellen Sicherungsvermögen eines Vertrags
@@ -247,4 +247,5 @@ for gl in np.arange(0.7, 1.01, 0.1):
 
 end = time.time()
 print()
+
 print(f"Gesamtzeit: {end - start} Sekunden")
